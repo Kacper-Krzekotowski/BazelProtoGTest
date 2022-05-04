@@ -5,5 +5,6 @@ cc_test(
     deps = [
         "@com_google_googletest//:gtest_main",
         "//lib:mesage",
+        "//Serwer:Serwer",
         ],
 )

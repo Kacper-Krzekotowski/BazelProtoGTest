@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "lib/person.pb.h"
+#include "Serwer/Serwer.h"
 
 class TestPb : public ::testing::Test {
 protected:
@@ -22,5 +23,18 @@ TEST_F(TestPb,TestingPersonPB){
     ASSERT_EQ(in.age(),out.age());
     ASSERT_EQ("Kobitki",out.favoritething());
 }
+
+
+
+class TestSerwer : public ::testing::Test {
+protected:
+    Serwer srw;
+};
+
+TEST_F(TestSerwer,GetSocketTest){
+    auto p = srw.get_listener_socket("8089");
+    ASSERT_TRUE(p != -1);
+}
+
 
 
